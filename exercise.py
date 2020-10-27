@@ -39,7 +39,7 @@ def findMinPath():
     fh = open("out.txt", "r")
     for line in fh:
         tArr.append(line.strip())
-    #fh.close()
+    fh.close()
 
     for i, num in enumerate(tArr):
         sArr.append(num)
@@ -57,8 +57,9 @@ def findMinPath():
         if i == (len(pPath)-1):
             mStr = mStr + " " + str(pPath[i]) + " = " + str(minSum)
         else:
-            mStr = mStr + str(pPath[i]) + " +"
+            mStr = mStr + " " + str(pPath[i]) + " +"
     print(mStr)
+    fh = open("out.txt", "w")
     fh.truncate(0)
     fh.close()
 
